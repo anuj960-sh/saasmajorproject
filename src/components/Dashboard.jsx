@@ -4,12 +4,12 @@
 import { AmbientOrbs, Counter, MiniBar, RadialProgress } from './UIComponents'
 
 export default function Dashboard() {
-  const stats = [
-    { label: 'Active Projects', val: 24,  c: '#FFD700', icon: '◈', bars: [12,18,15,22,19,24,24], trend: '+8%'  },
-    { label: 'Tasks Complete',  val: 847, c: '#00ff88', icon: '✓', bars: [60,75,80,88,82,90,95], trend: '+12%' },
-    { label: 'Team Members',    val: 38,  c: '#b400ff', icon: '⊕', bars: [28,30,32,30,33,36,38], trend: '+5%'  },
-    { label: 'Avg Velocity',    val: 94,  c: '#ff0080', icon: '◉', bars: [78,82,85,88,86,92,94], trend: '+3%', suf: '%' },
-  ]
+ const stats = [
+  { label: 'Active Projects', val: 24,  c: '#FF6B35', icon: '◈', bars: [12,18,15,22,19,24,24], trend: '+8%'  },
+  { label: 'Tasks Complete',  val: 847, c: '#F7B731', icon: '✓', bars: [60,75,80,88,82,90,95], trend: '+12%' },
+  { label: 'Team Members',    val: 38,  c: '#5F27CD', icon: '⊕', bars: [28,30,32,30,33,36,38], trend: '+5%'  },
+  { label: 'Avg Velocity',    val: 94,  c: '#00D2D3', icon: '◉', bars: [78,82,85,88,86,92,94], trend: '+3%', suf: '%' },
+]
   const projs = [
     { name: 'NEXUS Backend API',      progress: 78, status: 'active',    team: 5, due: 'Apr 15', c: '#FFD700' },
     { name: 'Mobile App v3.0',        progress: 45, status: 'critical',  team: 8, due: 'Mar 28', c: '#ff0080' },
