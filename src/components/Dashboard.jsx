@@ -5,13 +5,13 @@ import { AmbientOrbs, Counter, MiniBar, RadialProgress } from './UIComponents'
 
 export default function Dashboard() {
   const stats = [
-    { label: 'Active Projects', val: 24,  c: '#00f5ff', icon: '◈', bars: [12,18,15,22,19,24,24], trend: '+8%'  },
+    { label: 'Active Projects', val: 24,  c: '#FFD700', icon: '◈', bars: [12,18,15,22,19,24,24], trend: '+8%'  },
     { label: 'Tasks Complete',  val: 847, c: '#00ff88', icon: '✓', bars: [60,75,80,88,82,90,95], trend: '+12%' },
     { label: 'Team Members',    val: 38,  c: '#b400ff', icon: '⊕', bars: [28,30,32,30,33,36,38], trend: '+5%'  },
     { label: 'Avg Velocity',    val: 94,  c: '#ff0080', icon: '◉', bars: [78,82,85,88,86,92,94], trend: '+3%', suf: '%' },
   ]
   const projs = [
-    { name: 'NEXUS Backend API',      progress: 78, status: 'active',    team: 5, due: 'Apr 15', c: '#00f5ff' },
+    { name: 'NEXUS Backend API',      progress: 78, status: 'active',    team: 5, due: 'Apr 15', c: '#FFD700' },
     { name: 'Mobile App v3.0',        progress: 45, status: 'critical',  team: 8, due: 'Mar 28', c: '#ff0080' },
     { name: 'Analytics Engine',       progress: 92, status: 'completed', team: 3, due: 'Mar 20', c: '#00ff88' },
     { name: 'Auth System Overhaul',   progress: 30, status: 'pending',   team: 4, due: 'May 01', c: '#b400ff' },
@@ -20,7 +20,7 @@ export default function Dashboard() {
   const feed = [
     { user: 'S.KUMAR',   action: 'completed task',   target: 'API Integration #23',    time: '2m',  c: '#00ff88', icon: '✓' },
     { user: 'AI.AGENT',  action: 'detected risk in', target: 'Mobile App deadline',    time: '5m',  c: '#ffd700', icon: '◎' },
-    { user: 'R.SHARMA',  action: 'created project',  target: 'Mobile Dashboard',       time: '15m', c: '#00f5ff', icon: '◈' },
+    { user: 'R.SHARMA',  action: 'created project',  target: 'Mobile Dashboard',       time: '15m', c: '#FFD700', icon: '◈' },
     { user: 'A.SINGH',   action: 'flagged critical', target: 'Database Migration',     time: '1h',  c: '#ff0080', icon: '⚠' },
     { user: 'P.GUPTA',   action: 'updated status',   target: 'Frontend Sprint #4',     time: '2h',  c: '#b400ff', icon: '◊' },
   ]
@@ -33,7 +33,7 @@ export default function Dashboard() {
       {/* Page Header */}
       <div style={{ marginBottom: 30, animation: 'fadeInUp 0.5s ease' }}>
         <div className="holo-tag" style={{ marginBottom: 8 }}>◈ CONTROL CENTER</div>
-        <h1 style={{ fontFamily: 'Bebas Neue,sans-serif', fontSize: '2.6rem', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: 4 }}>Mission <span className="neon-cyan">Dashboard</span></h1>
+        <h1 style={{ fontFamily: 'Bebas Neue,sans-serif', fontSize: '2.6rem', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: 4 }}>Mission <span className="neon-yellow">Dashboard</span></h1>
         <p style={{ fontFamily: 'Rajdhani,sans-serif', fontSize: '1rem', color: 'rgba(110,110,170,0.6)' }}>Real-time overview · All systems nominal · AI monitoring active</p>
       </div>
 
@@ -42,7 +42,7 @@ export default function Dashboard() {
         {stats.map((s, i) => (
           <div key={i} className="glass-card" style={{ padding: '22px', animation: `fadeInUp 0.5s ease ${i * 0.08}s both`, transition: 'all 0.3s', cursor: 'pointer' }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = s.c; e.currentTarget.style.boxShadow = `0 0 40px ${s.c}15` }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(0,245,255,0.15)'; e.currentTarget.style.boxShadow = '' }}>
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,215,0,0.15)'; e.currentTarget.style.boxShadow = '' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 14 }}>
               <div>
                 <div style={{ fontFamily: 'Bebas Neue,sans-serif', fontSize: '2.2rem', color: s.c, textShadow: `0 0 20px ${s.c}`, lineHeight: 1, letterSpacing: '2px' }}>
@@ -93,7 +93,7 @@ export default function Dashboard() {
           <div className="glass-card" style={{ padding: 20, animation: 'fadeInUp 0.6s ease 0.3s both' }}>
             <div className="holo-tag" style={{ marginBottom: 14, fontSize: '0.55rem' }}>◉ PERFORMANCE</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, placeItems: 'center' }}>
-              <RadialProgress value={87} color="#00f5ff" sz={90} label="On-Time" />
+              <RadialProgress value={87} color="#FFD700" sz={90} label="On-Time" />
               <RadialProgress value={94} color="#00ff88" sz={90} label="Quality" />
               <RadialProgress value={72} color="#b400ff" sz={90} label="Capacity" />
               <RadialProgress value={98} color="#ff0080" sz={90} label="Uptime" />
@@ -102,7 +102,7 @@ export default function Dashboard() {
           <div className="glass-card" style={{ padding: 20, animation: 'fadeInUp 0.6s ease 0.35s both' }}>
             <div className="holo-tag" style={{ marginBottom: 12, fontSize: '0.55rem' }}>⟡ QUICK ACTIONS</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-              {[['+ NEW PROJECT', '#00f5ff'], ['+ CREATE TASK', '#00ff88'], ['+ ADD MEMBER', '#b400ff'], ['◎ ASK AI AGENT', '#ffd700']].map(([lbl, c], i) => (
+              {[['+ NEW PROJECT', '#FFD700'], ['+ CREATE TASK', '#00ff88'], ['+ ADD MEMBER', '#b400ff'], ['◎ ASK AI AGENT', '#ffd700']].map(([lbl, c], i) => (
                 <button key={i} style={{ padding: '9px 12px', background: `${c}06`, border: `1px solid ${c}20`, borderRadius: 8, color: c, fontFamily: 'Orbitron,sans-serif', fontSize: '0.58rem', letterSpacing: '2px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.3s' }}
                   onMouseEnter={e => { e.currentTarget.style.background = `${c}12`; e.currentTarget.style.boxShadow = `0 0 16px ${c}15` }}
                   onMouseLeave={e => { e.currentTarget.style.background = `${c}06`; e.currentTarget.style.boxShadow = '' }}>
@@ -142,4 +142,4 @@ export default function Dashboard() {
       </div>
     </div>
   )
-} 
+}
